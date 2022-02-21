@@ -23,6 +23,8 @@ header {
     padding: 15px 20px 0 0;
     font-size: 12;
     text-align: right;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 .name {
@@ -32,13 +34,7 @@ header {
     width: 300px;
     height: 150px;
     overflow: hidden;
-    margin: 0 -15px;
-    margin-top: 25px;
-}
-
-.logo-img {
-    margin-top: 5px;
-    margin-bottom: -5px;
+    margin: 0 -60px;
 }
 
 nav {
@@ -50,8 +46,9 @@ nav {
     height: 50px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    margin-left: 40px;
+    justify-content: space-evenly;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 ul {
@@ -120,15 +117,20 @@ section {
 
 .carousel-news {
     width: 4637px;
+    
+    transform-style: preserve-3d;
 }
 
 .main-news-item {
     width: 100%;
     /* border: #5065e0 1px dashed; */
-    width: 917.25px;
+    width: 927.25px;
     margin-right: 10px;
     display: flex;
     float: left;
+    position: relative;
+
+    transition: transform .5s, opacity .5s, z-index .5s;
 }
 
 .main-news-right-column {
@@ -139,6 +141,7 @@ section {
 
 .main-news-img {
     margin-right: 30px;
+    height: 300px;
 }
 
 .main-news-text {
@@ -163,7 +166,7 @@ section {
     height: 50px;
 }
 
-.btn {
+.btn, .btn-dot {
     background: #1e555c;
     color: #fff;
     transition: .3s;
@@ -181,8 +184,12 @@ section {
 
 .main-news-nav {
     position: absolute;
-    bottom: 0;
+    bottom: 4px;
     right: 0;
+    display: flex;
+    direction: row;
+    justify-content: space-between;
+    width: 52%;
 }
 
 .round-btn {
@@ -195,7 +202,7 @@ section {
     border-radius: 50%;
 }
 
-.news-prev, .news-next {
+.news-prev, .news-next, .btn-dot {
     background: 0 0;
     color: inherit;
     border: none;
@@ -213,10 +220,17 @@ section {
 
 .round-btn.left img {
     transform: rotate(180deg);
-
 }
 
+.dots {
+    position: absolute;
+    bottom: 5px;
+    right: 105px;
+}
 
+.btn-dot.active span, .btn-dot:hover span {
+    background: #1e555c;
+}
 
 a {
     text-decoration: none;
@@ -276,6 +290,17 @@ li a {
 
 em {
     color: #c44900;
+}
+
+span {
+    width: 8px;
+    height: 8px;
+    margin: 5px;
+    background: #c4c5bf;
+    display: block;
+    -webkit-backface-visibility: visible;
+    transition: opacity .2s ease;
+    border-radius: 30px;
 }
 
 .stamp {
