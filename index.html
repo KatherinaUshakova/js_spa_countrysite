@@ -12,13 +12,13 @@
         </div>
         <div class="header-block">
             <div class="logo-img">
-                <img src='paw.png' alt="картинка логотип" width="288px">
+                <img src='pics/paw.png' alt="картинка логотип" width="288px">
                 </div>
             <div class="name">
                 <b>Министерство Внутренних Дел Выдуманной Страны</b>
             </div>
             <div class="logo-img">
-            <img src='bird_logo_negate.png' alt="картинка логотип" height="195px">
+            <img src='pics/bird_logo_negate.png' alt="картинка логотип" height="195px">
             </div>
         </div>
     </header>
@@ -79,11 +79,11 @@
             </aside>
             <section class="main-inf">
                 <section class="actual-news"> <!-- вообще все в блоке-->
-                    <div class="container-news">  <!--для отступа, внешний блок, nav и dots-->
-                        <div class="news-visible-block"> <!-- картинка и текст-->
-                            <div class="carousel-news">  <!-- длинная полоса, все элементы карусели-->
+                    <div class="container-news">  <!--для отступа, внешний блок, nav и dots, не прокручиваются-->
+                        <div class="news-visible-block"> <!-- картинка и текст, прокручиваются-->
+                            <div class="carousel-news">  <!-- длинная полоса: все элементы карусели-->
                                 <div class="main-news-item active">
-                                    <img src="kotik.jpg" class="main-news-img" alt="фото новость 1">
+                                    <img src="pics/kotik.jpg" class="main-news-img" alt="фото новость 1">
                                     <div class="main-news-right-column">
                                         <div class="main-news-text">
                                             <h4>"Котики в очередной раз доказали свою маленькость" - заявил прессекретарь Выдуманной страны Пухляш А.М. на Общемировом Собрании Крох</h4>
@@ -95,7 +95,7 @@
                                     </div>
                                 </div>
                                 <div class="main-news-item">
-                                    <img src="28.jpg" class="main-news-img" alt="фото новость 2" height="293px">
+                                    <img src="pics/28.jpg" class="main-news-img" alt="фото новость 2" height="293px">
                                     <div class="main-news-right-column">
                                         <div class="main-news-text">
                                             <h4> Знаменитый дизайнер из Брюсселя представил новую серию белых птичек для вашего дома </h4>
@@ -107,7 +107,7 @@
                                     </div>
                                 </div> 
                                 <div class="main-news-item">
-                                    <img src="news-3.jpg" class="main-news-img" alt="фото новость 3">
+                                    <img src="pics/news-3.jpg" class="main-news-img" alt="фото новость 3">
                                     <div class="main-news-right-column">
                                         <div class="main-news-text">
                                             <h4> "Огонь революции горит в наших пушистых сердцах!". <br>Общественные волнения усиливаются, тогда как правительство разводит лапками </h4>
@@ -125,14 +125,14 @@
                                 <a href="#" class="btn solid-btn"> Подробнее </a>
                             </div>
                             <div class="arrows">
-                                <button type="button" class="news-prev disabled">
+                                <button type="button" class="news-prev disabled prev">
                                     <div class="round-btn btn left">
-                                        <img src="arrow.png">
+                                        <img src="pics/arrow.png">
                                     </div>
                                 </button>
-                                <button type="button" class="news-next">
+                                <button type="button" class="news-next" onclick="next()">
                                     <div class="round-btn btn right">
-                                        <img src="arrow.png">
+                                        <img src="pics/arrow.png">
                                     </div>
                                 </button>
                             </div>
@@ -169,9 +169,9 @@
            </ul>
         </div>
         <div class="stamp">
-            <img src="paw.png" class="paw" alt="лапка котика">
+            <img src="pics/paw.png" class="paw" alt="лапка котика">
             Одобрено котиками
         </div>
     </footer>
-тык
+<script src="script.js"></script>
 </body>
