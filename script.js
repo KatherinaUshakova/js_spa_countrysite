@@ -31,43 +31,45 @@ let counter = 0;
 const stepSize = 960;
 const carousel = document.querySelector('.carousel-news');
 const images = document.querySelectorAll('.main-news-item');
-let first = document.getElementsByClassName('news-next');
-let last = document.getElementsByClassName('news-next');
+let buttonLeft = document.getElementsByClassName('news-prev');
+let buttonRight = document.getElementsByClassName('news-next');
+const carouselWidth = images.length * stepSize;
 
 document.querySelector('.right').addEventListener('click', function() {
-    
+    if (buttonRight[0].classList.contains('disabled')) {
+        return;
+    }
+
     counter = counter + stepSize;
-    console.log(counter);
-    if (counter == stepSize * (images.length-1)) {
-        last[0].classList.add("disabled");
-        console.log(counter);
+
+    if (counter >= stepSize * (images.length - 1)) {
+        buttonRight[0].classList.add('disabled');
     };
     
-    if (counter == 0){
-        first[0].classList.remove("disabled");
-        console.log(counter);
+    if (counter >= 0) {
+        buttonLeft[0].classList.remove('disabled');
     };
     
     carousel.style.left = -counter +'px';
-})
+});
 
 document.querySelector('.left').addEventListener('click', function() {
-    
-    counter = counter - stepSize;
-    console.log(counter);
-    
-    if (counter == 0) {
-        first[0].classList.add('disabled');
-        console.log(counter);
-    }
-    
-    if (counter == stepSize * (images.length-1)) {
-        last[0].classList.remove('disabled');
-        console.log(counter);
+    if (buttonLeft[0].classList.contains('disabled')) {
+        return;
     }
 
-    carousel.style.left = +counter +'px';
-})
+    counter = counter - stepSize;
+    
+    if (counter <= 0) {
+        buttonLeft[0].classList.add('disabled');
+    }
+    
+    if (counter <= stepSize * (images.length - 1)) {
+        buttonRight[0].classList.remove('disabled');
+    }
+
+    carousel.style.left = -counter +'px';
+});
 
 
 //Способ 3. Меняет классы, но не крутит. Задумывалось как display: block/none//
