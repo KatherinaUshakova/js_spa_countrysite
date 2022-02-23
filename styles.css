@@ -117,7 +117,7 @@ section {
 
 .carousel-news {
     width: 4637px;
-    
+    position: relative;
     transform-style: preserve-3d;
 }
 
@@ -129,9 +129,12 @@ section {
     display: flex;
     float: left;
     position: relative;
-
     /* transition: transform .5s, opacity .5s, z-index .5s; */
 }
+
+/* .active {
+    display: block;
+} */
 
 .main-news-right-column {
     display: flex;
@@ -230,6 +233,10 @@ section {
 
 .btn-dot.active span, .btn-dot:hover span {
     background: #1e555c;
+}
+
+.disabled .btn{
+    background: #c4c5bf;
 }
 
 a {
