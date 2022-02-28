@@ -36,21 +36,22 @@ let buttonRight = document.getElementsByClassName('news-next');
 const carouselWidth = images.length * stepSize;
 
 document.querySelector('.right').addEventListener('click', function() {
+   
     if (buttonRight[0].classList.contains('disabled')) {
         return;
     }
-
     counter = counter + stepSize;
 
     if (counter >= stepSize * (images.length - 1)) {
         buttonRight[0].classList.add('disabled');
     };
     
-    if (counter >= 0) {
+    if (counter > 0) {
         buttonLeft[0].classList.remove('disabled');
     };
-    
     carousel.style.left = -counter +'px';
+
+    nextDot();
 });
 
 document.querySelector('.left').addEventListener('click', function() {
@@ -64,38 +65,30 @@ document.querySelector('.left').addEventListener('click', function() {
         buttonLeft[0].classList.add('disabled');
     }
     
-    if (counter <= stepSize * (images.length - 1)) {
+    if (counter < stepSize * (images.length - 1)) {
         buttonRight[0].classList.remove('disabled');
     }
-
+   
     carousel.style.left = -counter +'px';
+
+    prevDot();
 });
-
-
-//Способ 3. Меняет классы, но не крутит. Задумывалось как display: block/none//
-
-// let i=0;
-
-// function next() {
+let i=0;
+function nextDot() {
     
-//     let j=document.getElementsByClassName('main-news-item').length;
-//     let pic=document.getElementsByClassName("main-news-item");
+    let j=document.getElementsByClassName('btn-dot').length;
+    let dot=document.getElementsByClassName("btn-dot");
 
-//     pic[i].classList.remove("active");
-//     i=(j+i+1) % j;
-//     pic[i].classList.add("active");
-// }
+    dot[i].classList.remove("active");
+    i=(j+i+1) % j;
+    dot[i].classList.add("active");
+}
 
-// function prev() {
-    
-//     let j=document.getElementsByClassName('main-news-item').length;
-//     let pic=document.getElementsByClassName("main-news-item");
+function prevDot() {
+    let j=document.getElementsByClassName('btn-dot').length;
+    let dot=document.getElementsByClassName("btn-dot");
 
-//     pic[i].classList.remove("active");
-//     i=(j+i-1) % j;
-//     pic[i].classList.add("active");
-// }
-
-//Точки//
-
-const dots = document.querySelectorAll('.dots');
+    dot[i].classList.remove("active");
+    i=(j+i-1) % j;
+    dot[i].classList.add("active");
+}

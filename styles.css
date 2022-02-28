@@ -2,7 +2,7 @@ body {
     width: 100%;
     margin: 0;
     color: black;
-    background-color: #e0e2db;
+    background-color: #f0f0f0;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -102,23 +102,26 @@ section {
     margin-bottom: 20px;
 }
 
+section.actual-news {
+    padding-left: 25px;
+}
+
 .container-news {
     position: relative;
     margin-bottom: 20px;
-    /* width: 100%;
-    z-index: 1; */
 }
+
 .news-visible-block {
-    padding: 0 0 0 25px;
     /* border: #074d22 1px dashed;  */
     position: relative;
     overflow: hidden;
 }
 
 .carousel-news {
-    width: 4637px;
+    width: 3842px;
     position: relative;
     transform-style: preserve-3d;
+    transition: .4s all ease;
 }
 
 .main-news-item {
@@ -129,12 +132,7 @@ section {
     display: flex;
     float: left;
     position: relative;
-    /* transition: transform .5s, opacity .5s, z-index .5s; */
 }
-
-/* .active {
-    display: block;
-} */
 
 .main-news-right-column {
     display: flex;
@@ -165,7 +163,7 @@ section {
     bottom: 0;
     z-index: 2;
     width: 100%;
-    background: linear-gradient(rgba(255,255,255,0),#e0e2db);
+    background: linear-gradient(rgba(255,255,255,0),#f0f0f0);
     height: 50px;
 }
 
@@ -177,12 +175,12 @@ section {
     cursor: pointer;
 }
 
-.solid-btn {
+.solid-btn, .bordered-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 40px;
-    width: 140px;
+    height: 42px;
+    width: 150px;
 }
 
 .main-news-nav {
@@ -227,12 +225,23 @@ section {
 
 .dots {
     position: absolute;
-    bottom: 5px;
+    bottom: 6px;
     right: 105px;
 }
 
-.btn-dot.active span, .btn-dot:hover span {
-    background: #1e555c;
+.bordered-btn.btn {
+    background: transparent;
+    border: 2px solid #1e555c;
+    color: #1e555c;
+    font-weight: 700;
+}
+
+.btn-dot.active span, .btn-dot:hover span, .btn:hover {
+    background: #163f44;
+}
+
+.bordered-btn:hover {
+    background-color: #1c4c5342;
 }
 
 .disabled .btn{
@@ -325,8 +334,4 @@ span {
     border: 2px solid pink; /* Параметры рамки */
     box-shadow: 0 0 3px #c78283;
     margin-bottom: -10px;
-}
-
-.transformAnimation {
-    transition: .4s all ease-in-out;
 }
