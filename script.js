@@ -1,4 +1,5 @@
-
+let now = new Date();
+alert(now);
 let counter = 0;
 const stepSize = 960;
 const carousel = document.querySelector('.carousel-news');
@@ -22,6 +23,8 @@ document.querySelector('.right').addEventListener('click', function() {
         buttonLeft[0].classList.remove('disabled');
     };
     carousel.style.left = -counter +'px';
+
+    console.log(counter);
 
     nextDot();
 });
@@ -49,19 +52,58 @@ document.querySelector('.left').addEventListener('click', function() {
 let i=0;
 function nextDot() {
     
-    let j=document.getElementsByClassName('btn-dot').length;
     let dot=document.getElementsByClassName("btn-dot");
 
     dot[i].classList.remove("active");
-    i=(j+i+1) % j;
+    i++;
     dot[i].classList.add("active");
 }
 
 function prevDot() {
-    let j=document.getElementsByClassName('btn-dot').length;
     let dot=document.getElementsByClassName("btn-dot");
 
     dot[i].classList.remove("active");
-    i=(j+i-1) % j;
+    i--;
     dot[i].classList.add("active");
+}
+
+//Навигация по кружочкам//
+
+// document.querySelector('.btn-dot').addEventListener('click', function() {
+
+//     let dot=document.getElementsByClassName("btn-dot");
+     //                              //сдвиг = номер точки * шаг - сколько мы уже прошли//
+   
+    // console.log(dot[i]);
+    // counter = counter + stepSize;
+    
+    // let dotNum = dot[i];
+
+    // offset = (dotNum * stepSize) - counter;
+
+
+    // carousel.style.left = -offset +'px';
+// });
+
+
+function dotNav() {
+    let dots = document.getElementsByClassName('btn-dot');
+
+    let target = event.target;
+    // let currentDot = get
+    console.log(target);
+    console.log(indexOf(target));
+    console.log(dots);
+
+    for (let j=0; j<dots.length; j++) {
+       if (dots[j].classList.contains('active')) {
+           activeDotIndex = j+1;
+       }
+    }
+
+    counter = stepSize * activeDotIndex;
+
+    offset = (id * stepSize) - offset;
+
+    carousel.style.left = -offset +'px';
 }
