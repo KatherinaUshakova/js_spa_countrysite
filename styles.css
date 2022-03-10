@@ -78,6 +78,7 @@ main {
     width: 20%;
     flex-direction: column; 
     margin-right: 2em;
+    align-self: start;
 }
 
 section {
@@ -273,7 +274,7 @@ small {
     color: #5c5c5c;
 }
 
-/* h4 {
+h4 {
     margin-block-end: 63px!important;
 }
 
@@ -288,6 +289,7 @@ small {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+   
 }
 
 .actual-link {
@@ -303,13 +305,22 @@ small {
     padding-right: 15px;
     color: inherit;
     justify-content: flex-start!important;
+
+}
+
+.links-container a:hover {
+    color: #59138b;
 }
 
 .links-container p {
     font-size: 14px;
     margin-bottom: 8px;
-    transition: .3s;
-} */
+    transition: .2s;
+}
+
+.link-title {
+    font-weight: 560;
+}
 
 footer {
     background-color: #1e555c;

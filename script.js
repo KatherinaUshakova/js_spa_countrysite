@@ -1,4 +1,4 @@
-let now = new Date();
+
 alert(now);
 let counter = 0;
 const stepSize = 960;
