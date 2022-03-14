@@ -295,7 +295,7 @@ h4 {
 .actual-link {
     display: flex;
     margin-right: 0px;
-    margin-bottom: 25px;
+    margin-bottom: 38px; /*25*/
     flex-direction: column;
     justify-content: center;
     height: 115px;
@@ -320,6 +320,13 @@ h4 {
 
 .link-title {
     font-weight: 560;
+}
+
+p.link-desctiption {
+    font-size: 13px;
+    display: block;
+    overflow: hidden;
+    margin-block-start: auto;
 }
 
 footer {
