@@ -1,3 +1,5 @@
+window.onload = addRuText();
+
 const stepSize = -960;
 const carousel = document.querySelector('.carousel-news');
 const images = document.querySelectorAll('.main-news-item');
@@ -104,4 +106,56 @@ function LeftBtnIfDisabled(leftOffset) {
     if (leftOffset > stepSize * (images.length - 1)) {
         buttonRight[0].classList.remove('disabled');
     }
+}
+
+
+//привязка текста//
+
+function addRuText(){
+    // addHeaderText(); //not yet//
+    addNavText();
+    // addAsideText(); //not yet//
+    addAdditionalNewsText();
+}
+
+function addNavText() {
+    let navContainer = document.querySelector('.main-nav');
+    let navItems = ru.navigation; 
+
+    console.log(navItems);
+
+    for (let item of navItems) {
+
+        let navList = document.createElement('li');
+
+    navList.innerHTML = `<a href="#"> ${item} </a></li> `;
+    navContainer.insertAdjacentElement("beforeend", navList);
+    }
+}
+
+function addAdditionalNewsText() {
+
+    let adHeaderContainer = document.querySelector('.add-inf');
+
+    let adInfHeader = document.createElement('h4');
+    adInfHeader.innerHTML = ru.adInfHeader;
+
+    adHeaderContainer.insertAdjacentElement("afterbegin", adInfHeader);
+    };
+    
+    {
+    let actualLinkBox = document.querySelector('.links-container');
+    let newsList = ru.newsItem; 
+
+    for (let newItem of newsList) { 
+        let title = newItem.title;
+        let description = newItem.description;
+
+        let newDiv = document.createElement('div');
+
+        newDiv.innerHTML = `<a href="#" class="actual-link"> <p class="link-title"> ${title} </p> 
+        <p class="link-desctiption"> ${description} </p> `;
+
+        actualLinkBox.insertAdjacentElement("afterbegin", newDiv);
+    }; 
 }
