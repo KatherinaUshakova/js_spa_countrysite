@@ -12,6 +12,13 @@ header {
     height: 200px;
 }
 
+.topheader {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+    max-width: 1600px;
+}
+
 .header-block {
     display: flex;
     align-items: center;
@@ -19,12 +26,15 @@ header {
     margin: -29px 0 0 0;
 }
 
-.header-phone {
-    padding: 15px 20px 0 0;
-    font-size: 12;
-    text-align: right;
-    max-width: 1600px;
-    margin: 0 auto;
+.btn-lang {
+    background: inherit;
+    color: inherit;
+    border-width: 0ch;
+    cursor: pointer;
+}
+
+.btn-lang.active , .btn-lang:hover, .lang-active{
+    color: #f5bb3fe7;
 }
 
 .name {
@@ -95,7 +105,7 @@ section {
     border-bottom: #c78283 1px solid;
 }
 
-a:link {
+.new-item a:link, .header-phone a:link {
     color: white;
 }
 
@@ -107,11 +117,11 @@ a:link {
     margin-bottom: 20px;
 }
 
-a:hover {
-    color: #c78283;
+a:hover, .header-phone a:hover {
+color: #c78283;
 }
 
-a:active {
+a:active, .header-phone a:active{
     color: rgb(255, 255, 255);
 }
 
@@ -289,7 +299,6 @@ h4 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-   
 }
 
 .actual-link {

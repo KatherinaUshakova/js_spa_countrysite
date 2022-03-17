@@ -1,4 +1,4 @@
-window.onload = addRuText();
+window.onload = addText(language['ru']);
 
 const stepSize = -960;
 const carousel = document.querySelector('.carousel-news');
@@ -106,56 +106,99 @@ function LeftBtnIfDisabled(leftOffset) {
     if (leftOffset > stepSize * (images.length - 1)) {
         buttonRight[0].classList.remove('disabled');
     }
-}
+};
+
+//Кнопки смены языка//
+
+let langBtns = document.querySelectorAll('.btn-lang');
+
+for (let i = 0; i < langBtns.length; i++) {
+
+    langBtns[i].addEventListener('click', function() {
+        let html = document.getElementsByTagName('html');
+        let currentLang = html[0].getAttribute('lang');
+        let btnLang = langBtns[i].classList[0];
+
+        if (btnLang != currentLang) {
+            html[0].setAttribute("lang", btnLang);
+            langBtns[i].classList.add('lang-active');
+            addText(language[btnLang]);
+        }  
+
+        for (let j = 0; j < langBtns.length; j++) {
+            if (j != i) {
+            langBtns[j].classList.remove('lang-active');
+            }
+        }
+    });
+};
 
 
 //привязка текста//
 
-function addRuText(){
-    // addHeaderText(); //not yet//
-    addNavText();
-    // addAsideText(); //not yet//
-    addAdditionalNewsText();
+function addText(language){
+    addHeaderText(language.mainHeader); //not yet//
+    addNavText(language.navigation);
+    addAsideText(language.asideHeader); //not yet//
+    addAdditionalNewsText(language.newsItem, language.adInfHeader);
+};
+
+function addHeaderText(header) {
+    let mainHeader = document.querySelector('.mainHeader');
+    mainHeader.innerHTML = header;
 }
 
-function addNavText() {
-    let navContainer = document.querySelector('.main-nav');
-    let navItems = ru.navigation; 
-
-    console.log(navItems);
-
-    for (let item of navItems) {
-
-        let navList = document.createElement('li');
-
-    navList.innerHTML = `<a href="#"> ${item} </a></li> `;
-    navContainer.insertAdjacentElement("beforeend", navList);
-    }
-}
-
-function addAdditionalNewsText() {
-
-    let adHeaderContainer = document.querySelector('.add-inf');
-
-    let adInfHeader = document.createElement('h4');
-    adInfHeader.innerHTML = ru.adInfHeader;
-
-    adHeaderContainer.insertAdjacentElement("afterbegin", adInfHeader);
-    };
+function addNavText(nav) {
     
-    {
-    let actualLinkBox = document.querySelector('.links-container');
-    let newsList = ru.newsItem; 
+    let navContainer = document.querySelector('.main-nav');
+    let navItem = document.querySelectorAll('.nav-item');
+    console.log(navItem);
+    for (let item of nav) {
+    
+        for (let i=0; i < navItem.length; i++) {
+        navItem[i].innerHTML = item.name;
+        console.log(item.name);
+        
+        }}
+    // navList.innerHTML = `<a href="${item.link}"> ${item.name} </a>`;
+    // navContainer.insertAdjacentElement("beforeend", navList);
+    
 
-    for (let newItem of newsList) { 
-        let title = newItem.title;
-        let description = newItem.description;
+    //как было -> //
+    // let navContainer = document.querySelector('.main-nav');
+    
+    // for (let item of nav) {
+
+    //     let navList = document.createElement('li');
+
+    // navList.innerHTML = `<a href="${item.link}"> ${item.name} </a>`;
+    // navContainer.insertAdjacentElement("beforeend", navList);
+    // }
+        //Попробовать через element.setAttribute и просто присваиванием//
+        // .... иначе - createElement ... // 
+
+}
+
+function addAsideText(header) {
+    let asideHeader = document.querySelector('.asideHeader');
+    asideHeader.innerHTML = header;
+}
+
+function addAdditionalNewsText(newsList, header) {
+    let adHeaderContainer = document.querySelector('.addInfHeader');
+    adHeaderContainer.innerHTML = header;
+
+    let actualLinkBox = document.querySelector('.links-container');
+
+    for (let newsItem of newsList) { 
+        let title = newsItem.title;
+        let description = newsItem.description;
 
         let newDiv = document.createElement('div');
 
-        newDiv.innerHTML = `<a href="#" class="actual-link"> <p class="link-title"> ${title} </p> 
-        <p class="link-desctiption"> ${description} </p> `;
+        newDiv.innerHTML = `<a href="${newsItem.link}" class="actual-link"> <p class="link-title"> ${title} </p> 
+        <p class="link-desctiption"> ${description} </p> </a>`;
 
-        actualLinkBox.insertAdjacentElement("afterbegin", newDiv);
+        actualLinkBox.insertAdjacentElement("beforeend", newDiv);
     }; 
 }
