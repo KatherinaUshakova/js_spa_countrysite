@@ -137,10 +137,12 @@ for (let i = 0; i < langBtns.length; i++) {
 //привязка текста//
 
 function addText(language){
-    addHeaderText(language.mainHeader); //not yet//
+    addHeaderText(language.mainHeader);
     addNavText(language.navigation);
-    addAsideText(language.asideHeader); //not yet//
+    addAsideText(language.asideHeader, language.asideNews);
+    addMainNews(language.mainNews, language.btns) //not yet//
     addAdditionalNewsText(language.newsItem, language.adInfHeader);
+    // addFooterText(language) //not yet//
 };
 
 function addHeaderText(header) {
@@ -148,57 +150,54 @@ function addHeaderText(header) {
     mainHeader.innerHTML = header;
 }
 
-function addNavText(nav) {
-    
+function addNavText(nav) {  
     let navContainer = document.querySelector('.main-nav');
-    let navItem = document.querySelectorAll('.nav-item');
-    console.log(navItem);
+    let row = '';
+
     for (let item of nav) {
-    
-        for (let i=0; i < navItem.length; i++) {
-        navItem[i].innerHTML = item.name;
-        console.log(item.name);
-        
-        }}
-    // navList.innerHTML = `<a href="${item.link}"> ${item.name} </a>`;
-    // navContainer.insertAdjacentElement("beforeend", navList);
-    
+        row += `<li> <a href="${item.link}"> ${item.name} </a> </li>`;
+    }
 
-    //как было -> //
-    // let navContainer = document.querySelector('.main-nav');
-    
-    // for (let item of nav) {
-
-    //     let navList = document.createElement('li');
-
-    // navList.innerHTML = `<a href="${item.link}"> ${item.name} </a>`;
-    // navContainer.insertAdjacentElement("beforeend", navList);
-    // }
-        //Попробовать через element.setAttribute и просто присваиванием//
-        // .... иначе - createElement ... // 
-
+    navContainer.innerHTML = row;
 }
 
-function addAsideText(header) {
+function addAsideText(header, asideNewsList) {
     let asideHeader = document.querySelector('.asideHeader');
     asideHeader.innerHTML = header;
+
+    let asideNewsContainer = document.querySelector('.news-list');
+
+    let row = '';
+
+    for (let asideNews of asideNewsList) {
+        row += `<div class="news-item"><a href="${asideNews.link}"><p>${asideNews.title}</p><small>${asideNews.date}</small></a></div>`
+    }
+    asideNewsContainer.innerHTML = row;
 }
 
-function addAdditionalNewsText(newsList, header) {
+function addMainNews (news, btns){
+    let newsContainer = document.querySelector('.carousel-news');
+    let row = '';
+
+    for (let item of news) {
+        row += `<div class="main-news-item"><img src="${item.Img}" class="main-news-img" alt="${item.imgAlt}"><div class="main-news-right-column"><div class="main-news-text"><h4>${item.title}</h4><p class="teaser">${item.preview}</p></div></div></div>`
+    }
+    newsContainer.innerHTML = row;
+
+    let btnAbout = document.querySelector('.solid-btn');
+    btnAbout.innerHTML = btns.about;
+}
+
+function addAdditionalNewsText(newsList, adInfHeader) {
     let adHeaderContainer = document.querySelector('.addInfHeader');
-    adHeaderContainer.innerHTML = header;
+    adHeaderContainer.innerHTML = adInfHeader;
 
     let actualLinkBox = document.querySelector('.links-container');
+    let row = '';
 
     for (let newsItem of newsList) { 
-        let title = newsItem.title;
-        let description = newsItem.description;
-
-        let newDiv = document.createElement('div');
-
-        newDiv.innerHTML = `<a href="${newsItem.link}" class="actual-link"> <p class="link-title"> ${title} </p> 
-        <p class="link-desctiption"> ${description} </p> </a>`;
-
-        actualLinkBox.insertAdjacentElement("beforeend", newDiv);
-    }; 
-}
+        row += `<a href="${newsItem.link}" class="actual-link"> <p class="link-title"> ${newsItem.title} </p> 
+        <p class="link-desctiption"> ${newsItem.description} </p> </a>`;
+    }
+        actualLinkBox.innerHTML = row;
+}; 
