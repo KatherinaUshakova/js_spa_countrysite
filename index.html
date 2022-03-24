@@ -9,9 +9,9 @@
     <header>
         <div class="topheader">
             <div class="changing-lang">
-                <button type="button" class="ru btn-lang lang-active">RU</button> | 
-                <button type="button" class="en btn-lang">EN</button> | 
-                <button type="button" class="mew btn-lang">MEW</button>
+                <button type="button" class="btn-lang lang-active" id="ru">RU</button> | 
+                <button type="button" class="btn-lang" id="en">EN</button> | 
+                <button type="button" class="btn-lang" id="mew">MEW</button>
             </div>
             <div class="header-phone">
                 тел.: <a href="tel: #">+7 (923) 543-982-32</a>
@@ -31,9 +31,7 @@
     </header>
 
     <nav>
-        <ul class="main-nav">
-        
-        </ul>
+        <ul class="main-nav"></ul>
     </nav>
 
     <main>
@@ -47,7 +45,7 @@
                 <section class="actual-news"> <!-- вообще все в блоке-->
                     <div class="container-news">  <!--для отступа, внешний блок, nav и dots, не прокручиваются-->
                         <div class="news-visible-block"> <!-- картинка и текст, прокручиваются-->
-                            <div class="carousel-news">  <!-- длинная полоса: все элементы карусели-->
+                            <div class="carousel-news" style="left: 0px">  <!-- длинная полоса: все элементы карусели-->
                             </div>
                         </div>
                         <div class="main-news-nav">

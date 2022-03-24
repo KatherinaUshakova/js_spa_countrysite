@@ -125,7 +125,6 @@ a:active, .header-phone a:active{
     color: rgb(255, 255, 255);
 }
 
-
 section.actual-news {
     padding-left: 25px;
     margin-bottom: 60px;
@@ -147,7 +146,6 @@ section.actual-news {
     position: relative;
     transform-style: preserve-3d;
     transition: .4s all ease;
-    left: 0px;
 }
 
 .main-news-item {
@@ -177,7 +175,7 @@ section.actual-news {
 
 .teaser{
     font-size: smaller;
-    height: 45px;
+    height: 64px;
     position: relative;
     overflow: hidden;
 }
@@ -285,7 +283,7 @@ small {
 }
 
 h4 {
-    margin-block-end: 63px!important;
+    margin-block-end: 40px!important;
 }
 
 .add-inf {

@@ -65,25 +65,25 @@ let language = {
             {
                 title: "\"Котики в очередной раз доказали свою маленькость\" - заявил прессекретарь Выдуманной страны Пухляш А.М. на Общемировом Собрании Крох",
                 preview: "В воскресенье утром в здании Совета Крыльев Пушистых Чудес состоялось ежегодное заседание руководителей...",
-                Img: "pics/kotik.jpg",
+                img: "pics/kotik.jpg",
                 imgAlt: "фото новость 1"
             },
             {
                 title: "Знаменитый дизайнер из Брюсселя представил новую серию белых птичек для вашего дома",
                 preview: "В течение последний пяти лет Мяушмыг Камбярмякс разрабатывал уникальную коллекцию уркашений. Вдохновленный изящество японских садов...",
-                Img: "pics/28.jpg",
+                img: "pics/28.jpg",
                 imgAlt: "фото новость 2"
             },
             {
                 title: "\"Огонь революции горит в наших пушистых сердцах!\" <br> Общественные волнения усиливаются, тогда как правительство разводит лапками",
                 preview: "За последнюю неделю все четче стала прослеживаться опасность котячих востаний. Только в среду черные коты заявили о своей неготовности переходить дорогу",
-                Img: "pics/news-3.jpg",
+                img: "pics/news-3.jpg",
                 imgAlt: "фото новость 3"
             },
             {
                 title: "Первый в мире президент-киця стала новым лидером страны",
                 preview: "По результатам всеобщего референдума большинством голосов был выбран котик на пост нового президента на ближайшие 13 лет",
-                Img: "pics/news-4.jpg",
+                img: "pics/news-4.jpg",
                 imgAlt: "фото новость 4"
             }
         ],
@@ -196,28 +196,28 @@ let language = {
         ],
         mainNews: [
             {
-                title: "blabla",
-                preview: "bla",
-                Img: "",
-                imgAlt: ""
+                title: "\"The cats have once again proved their smallness\" - claimed the press secretary of the Fictional country I.M. Puffy at the Global Meeting of Crumbs",
+                preview: "On Sunday morning, the annual meeting of the leaders was held in the building of the Wings of Fluffy Wonders Council...",
+                img: "pics/kotik.jpg",
+                imgAlt: "photo news 1"
             },
             {
-                title: "",
-                preview: "",
-                Img: "",
-                imgAlt: ""
+                title: "The famous designer from Brussels has presented a new series of white birds for your home",
+                preview: "For the last five years, Myausmyg Kambyarmaks has been developing a unique collection of jewelry. Inspired by the grace of Japanese gardens...",
+                img: "pics/28.jpg",
+                imgAlt: "photo news 2"
             },
             {
-                title: "",
-                preview: "",
-                Img: "",
-                imgAlt: ""
+                title: "\"The fire of revolution is burning in our furry hearts!\" <br> Public unrest is intensifying, while the government is spreading its paws",
+                preview: "Over the past week, the danger of kitten uprisings has become clearer and clearer. Only on Wednesday the black cats declared their unwillingness to cross the road",
+                img: "pics/news-3.jpg",
+                imgAlt: "photo news 3"
             },
             {
-                title: "",
-                preview: "",
-                Img: "",
-                imgAlt: ""
+                title: "The world's first president-kitty became the new leader of the country",
+                preview: "According to the results of the general referendum, a cat was chosen by a majority of votes to be the new president for the next 13 years",
+                img: "pics/news-4.jpg",
+                imgAlt: "photo news 4"
             }
         ],
         btns:{
@@ -253,7 +253,7 @@ let language = {
             },
             {
                 title: "Officially recognized national anthem",
-                description: "pi pi pu pu PUUUUUU Pipipu PIIIIII"
+                description: "You're my Honeybunch Sugarplum, Pumpy-umpy-umpkin"
             },
             {
                 title: "Countering terrorism",
@@ -330,30 +330,34 @@ let language = {
         ],
         mainNews: [
             {
-                title: "",
-                preview: "",
-                Img: "",
-                imgAlt: ""
+                title: "\"The cats have once again proved their smallness\" - claimed the press secretary of the Fictional country I.M. Puffy at the Global Meeting of Crumbs",
+                preview: "On Sunday morning, the annual meeting of the leaders was held in the building of the Wings of Fluffy Wonders Council...",
+                img: "pics/kotik.jpg",
+                imgAlt: "photo news 1"
             },
             {
-                title: "",
-                preview: "",
-                Img: "",
-                imgAlt: ""
+                title: "The famous designer from Brussels has presented a new series of white birds for your home",
+                preview: "For the last five years, Myausmyg Kambyarmaks has been developing a unique collection of jewelry. Inspired by the grace of Japanese gardens...",
+                img: "pics/28.jpg",
+                imgAlt: "photo news 2"
             },
             {
-                title: "",
-                preview: "",
-                Img: "",
-                imgAlt: ""
+                title: "\"The fire of revolution is burning in our furry hearts!\" <br> Public unrest is intensifying, while the government is spreading its paws",
+                preview: "Over the past week, the danger of kitten uprisings has become clearer and clearer. Only on Wednesday the black cats declared their unwillingness to cross the road",
+                img: "pics/news-3.jpg",
+                imgAlt: "photo news 3"
             },
             {
-                title: "",
-                preview: "",
-                Img: "",
-                imgAlt: ""
+                title: "The world's first president-kitty became the new leader of the country",
+                preview: "According to the results of the general referendum, a cat was chosen by a majority of votes to be the new president for the next 13 years",
+                img: "pics/news-4.jpg",
+                imgAlt: "photo news 4"
             }
         ],
+        btns:{
+            about: "Murrr",
+            archive: "Mews Murrire",
+        },
         adInfHeader: "Merraew Miomr",
         newsItem: [
             {

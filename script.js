@@ -10,12 +10,14 @@ document.querySelector('.right').addEventListener('click', function() {
     if (buttonRight[0].classList.contains('disabled')) {
         return;
     }
+    console.log('---click---')
 
     let leftOffset = parseInt(carousel.style.left, 10) + stepSize;
 
     carousel.style.left = leftOffset + 'px';
-
+    
     RightBtnIfDisabled(leftOffset);
+    
     nextDot();
 });
 
@@ -25,7 +27,7 @@ document.querySelector('.left').addEventListener('click', function() {
     }
 
     let leftOffset = parseInt(carousel.style.left, 10) - stepSize;
-
+    console.log(leftOffset)
     carousel.style.left = leftOffset + 'px';
 
     LeftBtnIfDisabled(leftOffset);
@@ -45,9 +47,11 @@ function nextDot() {
 
     dots[activeDotIndex].classList.remove("active");
 
-    activeDotIndex++;
-
-    dots[activeDotIndex].classList.add("active");
+    if (activeDotIndex<dots.length-1) {
+        activeDotIndex++;
+    }
+        dots[activeDotIndex].classList.add("active");
+    
 }
 
 function prevDot() {
@@ -117,19 +121,20 @@ for (let i = 0; i < langBtns.length; i++) {
     langBtns[i].addEventListener('click', function() {
         let html = document.getElementsByTagName('html');
         let currentLang = html[0].getAttribute('lang');
-        let btnLang = langBtns[i].classList[0];
+        let btnLang = langBtns[i].id;
 
         if (btnLang != currentLang) {
             html[0].setAttribute("lang", btnLang);
             langBtns[i].classList.add('lang-active');
             addText(language[btnLang]);
         }  
-
-        for (let j = 0; j < langBtns.length; j++) {
+        
+        for (let j = 0; j <= langBtns.length; j++) {
             if (j != i) {
-            langBtns[j].classList.remove('lang-active');
+                langBtns[j].classList.remove('lang-active');
             }
         }
+        console.log(langBtns[i].classList)
     });
 };
 
@@ -180,7 +185,7 @@ function addMainNews (news, btns){
     let row = '';
 
     for (let item of news) {
-        row += `<div class="main-news-item"><img src="${item.Img}" class="main-news-img" alt="${item.imgAlt}"><div class="main-news-right-column"><div class="main-news-text"><h4>${item.title}</h4><p class="teaser">${item.preview}</p></div></div></div>`
+        row += `<div class="main-news-item"><img src="${item.img}" class="main-news-img" alt="${item.imgAlt}"><div class="main-news-right-column"><div class="main-news-text"><h4>${item.title}</h4><p class="teaser">${item.preview}</p></div></div></div>`
     }
     newsContainer.innerHTML = row;
 
