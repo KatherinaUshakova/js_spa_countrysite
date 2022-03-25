@@ -12,6 +12,13 @@ header {
     height: 200px;
 }
 
+.topheader {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+    max-width: 1600px;
+}
+
 .header-block {
     display: flex;
     align-items: center;
@@ -19,12 +26,15 @@ header {
     margin: -29px 0 0 0;
 }
 
-.header-phone {
-    padding: 15px 20px 0 0;
-    font-size: 12;
-    text-align: right;
-    max-width: 1600px;
-    margin: 0 auto;
+.btn-lang {
+    background: inherit;
+    color: inherit;
+    border-width: 0ch;
+    cursor: pointer;
+}
+
+.btn-lang.active , .btn-lang:hover, .lang-active{
+    color: #f5bb3fe7;
 }
 
 .name {
@@ -95,7 +105,7 @@ section {
     border-bottom: #c78283 1px solid;
 }
 
-a:link {
+.new-item a:link, .header-phone a:link {
     color: white;
 }
 
@@ -107,14 +117,13 @@ a:link {
     margin-bottom: 20px;
 }
 
-a:hover {
-    color: #c78283;
+a:hover, .header-phone a:hover {
+color: #c78283;
 }
 
-a:active {
+a:active, .header-phone a:active{
     color: rgb(255, 255, 255);
 }
-
 
 section.actual-news {
     padding-left: 25px;
@@ -137,7 +146,6 @@ section.actual-news {
     position: relative;
     transform-style: preserve-3d;
     transition: .4s all ease;
-    left: 0px;
 }
 
 .main-news-item {
@@ -167,7 +175,7 @@ section.actual-news {
 
 .teaser{
     font-size: smaller;
-    height: 45px;
+    height: 64px;
     position: relative;
     overflow: hidden;
 }
@@ -275,7 +283,7 @@ small {
 }
 
 h4 {
-    margin-block-end: 63px!important;
+    margin-block-end: 40px!important;
 }
 
 .add-inf {
@@ -294,7 +302,7 @@ h4 {
 .actual-link {
     display: flex;
     margin-right: 0px;
-    margin-bottom: 25px;
+    margin-bottom: 38px; /*25*/
     flex-direction: column;
     justify-content: center;
     height: 115px;
@@ -304,12 +312,28 @@ h4 {
     padding-right: 15px;
     color: inherit;
     justify-content: flex-start!important;
+
+}
+
+.links-container a:hover {
+    color: #59138b;
 }
 
 .links-container p {
     font-size: 14px;
     margin-bottom: 8px;
     transition: .3s;
+}
+
+.link-title {
+    font-weight: 560;
+}
+
+p.link-desctiption {
+    font-size: 13px;
+    display: block;
+    overflow: hidden;
+    margin-block-start: auto;
 }
 
 footer {

@@ -7,15 +7,22 @@
   </head>
 <body>
     <header>
-        <div class="header-phone">
-            тел.: <a href="tel: #">+7 (923) 543-982-32</a>
+        <div class="topheader">
+            <div class="changing-lang">
+                <button type="button" class="btn-lang lang-active" id="ru">RU</button> | 
+                <button type="button" class="btn-lang" id="en">EN</button> | 
+                <button type="button" class="btn-lang" id="mew">MEW</button>
+            </div>
+            <div class="header-phone">
+                тел.: <a href="tel: #">+7 (923) 543-982-32</a>
+            </div>
         </div>
         <div class="header-block">
             <div class="logo-img">
                 <img src='pics/paw.png' alt="картинка логотип" width="288px">
-                </div>
+            </div>
             <div class="name">
-                <b>Министерство Внутренних Дел Выдуманной Страны</b>
+                <b class="mainHeader"></b>
             </div>
             <div class="logo-img">
             <img src='pics/bird_logo_negate.png' alt="картинка логотип" height="195px">
@@ -24,113 +31,26 @@
     </header>
 
     <nav>
-        <ul class="main-nav">
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">Citizens</a></li>
-            <li><a href="#">Our memories</a></li>
-            <li><a href="#">Rules</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#contacts">Contacts</a></li>
-        </ul>
+        <ul class="main-nav"></ul>
     </nav>
 
     <main>
-       <h1>Новости</h1>
+       <h1 class="asideHeader"></h1>
        <div class="page">
             <aside class="aside-news">
                 <div class="news-list">
-                    <div class="news-item">
-                        <a href="#">
-                        <p>100-летие абсолютной собачьей безработицы</p>
-                        <small>16 ноября 2021</small>
-                        </a>
-                    </div>
-                    <div class="news-item">
-                        <a href="#">
-                        <p>Подводим итоги прошедших выборов</p>
-                        <small>21 октября 2021</small>
-                        </a>
-                    </div>
-                    <div class="news-item">
-                        <a href="#">
-                        <p>Новая структура в системе образования нашей страны</p>
-                        <small>13 октября 2021</small>
-                        </a>
-                    </div>
-                    <div class="news-item">
-                        <a href="#">
-                        <p>Президент подписал обновленный Кодекс пиратов об образовании</p>
-                        <small>2 октября 2021</small>
-                        </a>
-                    </div>
-                    <div class="news-item">
-                        <a href="#">
-                        <p>Цветы - фундамент выдуманной государственности</p>
-                        <small>26 сентября 2021</small>
-                        </a>
-                    </div>
-                    <div class="news-item">
-                        <a href="#">
-                        <p>Ключевые ориентиры для котиков</p>
-                        <small>19 сентября 2021</small>
-                        </a>
-                    </div>
                 </div>
             </aside>
             <section class="main-inf">
                 <section class="actual-news"> <!-- вообще все в блоке-->
                     <div class="container-news">  <!--для отступа, внешний блок, nav и dots, не прокручиваются-->
                         <div class="news-visible-block"> <!-- картинка и текст, прокручиваются-->
-                            <div class="carousel-news">  <!-- длинная полоса: все элементы карусели-->
-                                <div class="main-news-item one active">
-                                    <img src="pics/kotik.jpg" class="main-news-img" alt="фото новость 1">
-                                    <div class="main-news-right-column">
-                                        <div class="main-news-text">
-                                            <h4>"Котики в очередной раз доказали свою маленькость" - заявил прессекретарь Выдуманной страны Пухляш А.М. на Общемировом Собрании Крох</h4>
-                                            <p class="teaser"> 
-                                                В воскресенье утром в здании Совета Крыльев Пушистых Чудес состоялось ежегодное заседание руководителей...
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="main-news-item two">
-                                    <img src="pics/28.jpg" class="main-news-img" alt="фото новость 2" height="293px">
-                                    <div class="main-news-right-column">
-                                        <div class="main-news-text">
-                                            <h4> Знаменитый дизайнер из Брюсселя представил новую серию белых птичек для вашего дома </h4>
-                                            <p class="teaser"> 
-                                                В течение последний пяти лет Мяушмыг Камбярмякс разрабатывал уникальную коллекцию уркашений. Вдохновленный изящество японских садов... 
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <div class="main-news-item three">
-                                    <img src="pics/news-3.jpg" class="main-news-img" alt="фото новость 3">
-                                    <div class="main-news-right-column">
-                                        <div class="main-news-text">
-                                            <h4> "Огонь революции горит в наших пушистых сердцах!". <br>Общественные волнения усиливаются, тогда как правительство разводит лапками </h4>
-                                            <p class="teaser"> 
-                                                За последнюю неделю все четче стала прослеживаться опасность котячих востаний. Только в среду черные коты заявили о своей неготовности переходить дорогу
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <div class="main-news-item four">
-                                    <img src="pics/news-4.jpg" class="main-news-img" alt="фото новость 4" height="293px">
-                                    <div class="main-news-right-column">
-                                        <div class="main-news-text">
-                                            <h4> Первый в мире президент-киця стала новым лидером страны </h4>
-                                            <p class="teaser"> 
-                                                По результатам всеобщего референдума большинством голосов был выбран котик на пост нового президента на ближайшие 13 лет 
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="carousel-news" style="left: 0px">  <!-- длинная полоса: все элементы карусели-->
                             </div>
                         </div>
                         <div class="main-news-nav">
                             <div class="main-news-button">
-                                <a href="#" class="btn solid-btn"> Подробнее </a>
+                                <a href="#" class="btn solid-btn">  </a>
                             </div>
                             <div class="arrows">
                                 <button type="button" class="news-prev disabled prev">
@@ -145,16 +65,16 @@
                                 </button>
                             </div>
                             <div class="dots">
-                                <button class="btn-dot active" id="dot1">
+                                <button class="btn-dot active">
                                     <span></span>
                                 </button>
-                                <button class="btn-dot" id="dot2" onclick="dotNav()">
+                                <button class="btn-dot">
                                     <span></span>
                                 </button>
-                                <button class="btn-dot" id="dot3">
+                                <button class="btn-dot">
                                     <span></span>
                                 </button>
-                                <button class="btn-dot" id="dot4">
+                                <button class="btn-dot">
                                     <span></span>
                                 </button>
                             </div>
@@ -163,44 +83,8 @@
                     <a href="#" class="bordered-btn btn">Архив новостей</a>
                 </section>
                 <section class="add-inf">
-                    <h4>Актуальная информация</h4>
+                    <h4 class="addInfHeader"></h4>
                     <div class="links-container">
-                        <a href="#" class="actual-link"> 
-                            <p class="link-title"> Как вступить в блок  </p> 
-                            <p class="link-desctiption">Объединение Международного рыка явно великих котиков </p>
-                        </a>
-                        <a href="#" class="actual-link"> 
-                            <p class="link-title"> block 2</p> 
-                            <p class="link-desctiption"></p>
-                        </a>
-                        <a href="#" class="actual-link"> 
-                            <p class="link-title"> Молодежь против наркотiков</p> 
-                            <p class="link-desctiption"> Профилактика кицямании среди молодежи</p>
-                        </a>
-                        <a href="#" class="actual-link"> 
-                            <p class="link-title"> Кодекс об образовании стран</p> 
-                            <p class="link-desctiption"></p>
-                        </a>
-                        <a href="#" class="actual-link"> 
-                            <p class="link-title"> block 5</p> 
-                            <p class="link-desctiption"></p>
-                        </a>
-                        <a href="#" class="actual-link"> 
-                            <p class="link-title"> block 6</p> 
-                            <p class="link-desctiption"></p>
-                        </a>
-                        <a href="#" class="actual-link"> 
-                            <p class="link-title"> block 7</p> 
-                            <p class="link-desctiption"></p>
-                        </a>
-                        <a href="#" class="actual-link"> 
-                            <p class="link-title"> block 8</p> 
-                            <p class="link-desctiption"></p>
-                        </a>
-                        <a href="#" class="actual-link"> 
-                            <p class="link-title"> block 9</p> 
-                            <p class="link-desctiption"></p>
-                        </a>
                     </div>
                 </section>
             </section>
@@ -223,6 +107,9 @@
             Одобрено котиками
         </div>
     </footer>
-<script src="script.js"></script>
+    <script src="text-content.js"></script>
+    <script src="script.js"></script>
+    
+    
 </body>
 </html>
