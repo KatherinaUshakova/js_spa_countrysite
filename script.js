@@ -139,12 +139,22 @@ for (let i = 0; i < langBtns.length; i++) {
 //привязка текста//
 
 function addText(language){
+    addBtnsText(language.btns);
     addHeaderText(language.mainHeader);
     addNavText(language.navigation);
     addAsideText(language.asideHeader, language.asideNews);
-    addMainNews(language.mainNews, language.btns) //not yet//
+    addMainNews(language.mainNews);
     addAdditionalNewsText(language.newsItem, language.adInfHeader);
-    // addFooterText(language) //not yet//
+    addFooterText(language.footer, language.contacts) //not yet//
+    addContacts(language.contacts)
+};
+
+function addBtnsText(btns) {
+    let btnAbout = document.querySelector('.solid-btn');
+    btnAbout.innerHTML = btns.about;
+
+    let btnArchive = document.querySelector('.bordered-btn');
+    btnArchive.innerHTML = btns.archive;
 };
 
 function addHeaderText(header) {
@@ -185,9 +195,6 @@ function addMainNews (news, btns){
         row += `<div class="main-news-item"><img src="${item.img}" class="main-news-img" alt="${item.imgAlt}"><div class="main-news-right-column"><div class="main-news-text"><h4>${item.title}</h4><p class="teaser">${item.preview}</p></div></div></div>`
     }
     newsContainer.innerHTML = row;
-
-    let btnAbout = document.querySelector('.solid-btn');
-    btnAbout.innerHTML = btns.about;
 }
 
 function addAdditionalNewsText(newsList, adInfHeader) {
@@ -201,5 +208,30 @@ function addAdditionalNewsText(newsList, adInfHeader) {
         row += `<a href="${newsItem.link}" class="actual-link"> <p class="link-title"> ${newsItem.title} </p> 
         <p class="link-desctiption"> ${newsItem.description} </p> </a>`;
     }
-        actualLinkBox.innerHTML = row;
+    actualLinkBox.innerHTML = row;
 }; 
+
+function addContacts(contacts) {
+    let data = language.contacts; 
+    let phoneContainer = document.querySelector('.header-phone');
+
+    let row = `${contacts.phone}<a href="tel: #">${data.phoneNumber}</a>`
+    phoneContainer.innerHTML = row;
+}
+
+function addFooterText(footer, contacts) {
+    let stampContainert = document.querySelector('.stamp');
+    let stampData = footer.stamp
+
+    let row = `<img src="${stampData.img}" class="paw" alt="${stampData.alt}">${stampData.text}`;
+    stampContainert.innerHTML = row;
+
+    let contactsContainer  = document.querySelector('.contacts');
+    let data = language.contacts; 
+
+    let footerText = `<ul> ${footer.text.contactsText}<li>${contacts.phone}<a href="tel: #">${data.phoneNumber}</a></li><li>${contacts.email}<a href="mailto: #"> ${data.emailAddress}</a></li> </ul>`;
+    contactsContainer.innerHTML = footerText;
+
+    let footerHeader = document.querySelector('.footer-text');
+    footerHeader.innerHTML = footer.text.footerText;
+}

@@ -1,6 +1,16 @@
 
 let language = {
+    contacts:
+            {
+                phoneNumber: "+7 (923) 543-982-32",
+                emailAddress: "chotonapisano@pampam.com",
+            },
     ru: {
+        contacts:
+            {
+                phone: "тел.: ",
+                email: "e-mail: ",
+            },
         mainHeader: "Министерство Внутренних Дел Выдуманной Страны",
         navigation: [
             {
@@ -25,7 +35,7 @@ let language = {
             },
             {
                 name: "Контакты",
-                link: "#"
+                link: "#contacts"
             }
         ],
         asideHeader: "Новости",
@@ -130,9 +140,25 @@ let language = {
                 description: "Результаты чемпионата 2020-2021гг в Токио"
             } 
         ],
+        footer: {
+            stamp: {
+                text: "Одобрено котиками",
+                img: "pics/paw.png",
+                alt: "лапка котика",
+            },
+            text: {
+                contactsText: "Свяжитесь с нами:",
+                footerText: "Контакты и нижний блок",
+            },
+        }
     },
 
     en: {
+        contacts:
+            {
+                phone: "phone: ",
+                email: "e-mail: ",
+            },
         mainHeader: "The Ministry Of Internal Affairs Of Imaginable Country",
         navigation: [
             {   
@@ -158,7 +184,7 @@ let language = {
             },
             {
                 name: "Contacts",
-                link: "#"
+                link: "#contacts"
             }
         ],
         asideHeader: "Breaking News",
@@ -221,8 +247,8 @@ let language = {
             }
         ],
         btns:{
-                about: "Read",
-                archive: "News Archive",
+                about: "More",
+                archive: "News archive",
             },
         adInfHeader: "Actual information",
         newsItem: [
@@ -263,11 +289,26 @@ let language = {
                 title: "International Olympic Games on Sports Sleep",
                 description: "Results of the 2020-2021 Championship in Tokyo"
             }
-        ]
-            
+        ],
+        footer: {
+            stamp: {
+                text: "Approved by catinies",
+                img: "pics/paw.png",
+                alt: "cats paw",
+            },
+            text: {
+                contactsText: "Contact us:",
+                footerText: "Contacts and useful information",
+            },
+        }
     },
 
     mew: {
+        contacts:
+            {
+                phone: "murr.: ",
+                email: "mew-meaw: ",
+            },
         mainHeader: "Murr meaw meaw prrr miu maew mrew",
         navigation: [
             {
@@ -397,7 +438,17 @@ let language = {
                 title: "Muyi meaw mourrr murr meui",
                 description: "Meaw mrrr 2020-2021 moui meaw mrriu"
             }
-        ]
-            
+        ],
+        footer: {
+            stamp: {
+                text: "Muurrier murr meaoew",
+                img: "pics/paw.png",
+                alt: "Mur Mioew",
+            },
+            text: {
+                contactsText: "Meow muaws:",
+                footerText: "Meow Mui Meauws",
+            },
+        }
     }
 }
