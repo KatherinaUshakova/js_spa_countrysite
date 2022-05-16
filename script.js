@@ -74,7 +74,7 @@ function prevDot() {
 let navDots = document.querySelectorAll('.btn-dot');
 
 for (let i = 0; i < navDots.length; i++) {
-    navDots[i].addEventListener('click', function(event) {
+    navDots[i].addEventListener('click', function() {
         carousel.style.left = i * stepSize +'px';
 
         for (let j = 0; j < navDots.length; j++) {
@@ -140,7 +140,7 @@ for (let i = 0; i < langBtns.length; i++) {
 
 function addText(language){
     addBtnsText(language.btns);
-    addHeaderText(language.mainHeader);
+    addHeaderText(language.name);
     addNavText(language.navigation);
     addAsideText(language.asideHeader, language.asideNews);
     addMainNews(language.mainNews);
@@ -158,7 +158,7 @@ function addBtnsText(btns) {
 };
 
 function addHeaderText(header) {
-    let mainHeader = document.querySelector('.mainHeader');
+    let mainHeader = document.querySelector('.name');
     mainHeader.innerHTML = header;
 }
 
@@ -192,7 +192,14 @@ function addMainNews (news, btns){
     let row = '';
 
     for (let item of news) {
-        row += `<div class="main-news-item"><img src="${item.img}" class="main-news-img" alt="${item.imgAlt}"><div class="main-news-right-column"><div class="main-news-text"><h4>${item.title}</h4><p class="teaser">${item.preview}</p></div></div></div>`
+        row += `<div class="main-news-item"><img src="${item.img}" class="main-news-img" alt="${item.imgAlt}">
+                    <div class="main-news-right-column">
+                        <div class="main-news-text">
+                            <h2>${item.title}</h2>
+                            <p class="teaser">${item.preview}</p>
+                        </div>
+                    </div>
+                </div>`
     }
     newsContainer.innerHTML = row;
 }

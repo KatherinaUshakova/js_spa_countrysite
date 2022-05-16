@@ -2,6 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
+    <meta name="viewpoint" content="width=device-width">
     <title>Просто Сайт</title>
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -9,34 +10,38 @@
     <header> 
         <div class="background">
         </div>
-        <div class="topheader">
-            <div class="changing-lang">
-                <button type="button" class="btn-lang lang-active" id="ru">RU</button> | 
-                <button type="button" class="btn-lang" id="en">EN</button> | 
-                <button type="button" class="btn-lang" id="mew">MEW</button>
+            <div class="topheader">
+                <div class="changing-lang">
+                    <button type="button" class="btn-lang lang-active" id="ru">RU</button> | 
+                    <button type="button" class="btn-lang" id="en">EN</button> | 
+                    <button type="button" class="btn-lang" id="mew">MEW</button>
+                </div>
+                <div class="header-phone">
+                </div>
             </div>
-            <div class="header-phone">
-            </div>
-        </div>
         <div class="header-block">
             <div class="logo-img">
-                <img src='pics/paw.png' alt="картинка логотип" width="288px">
+                <img src='pics/paw.png' alt="картинка логотип" max-width="288px">
             </div>
-            <div class="name">
-                <b class="mainHeader"></b>
+            <div class="nameHeader">
+                <b class="name"></b>
             </div>
             <div class="logo-img">
-            <img src='pics/bird_logo_negate.png' alt="картинка логотип" height="195px">
+            <img src="pics/bird_logo_negate.png" alt="картинка логотип" height="195px">
             </div>
         </div>
     </header>
 
     <nav>
-        <ul class="main-nav"></ul>
+        <label class="menuToggle" for="menuCheck">
+            <img src="pics/hamburger-menu.png" alt="hamburger_menu">
+        </label>
+        <input id="menuCheck" type="checkbox">
+        <ul class="main-nav" id="menu-content"></ul>
     </nav>
 
     <main>
-       <h1 class="asideHeader"></h1>
+       <h2 class="asideHeader"></h2>
        <div class="page">
             <aside class="aside-news">
                 <div class="news-list">
@@ -103,7 +108,10 @@
     </footer>
 
     <script src="text-content.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="script.js"></script>
     
+    
+
 </body>
 </html>

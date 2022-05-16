@@ -11,7 +11,7 @@ let language = {
                 phone: "тел.: ",
                 email: "e-mail: ",
             },
-        mainHeader: "Министерство Внутренних Дел Выдуманной Страны",
+        name: "Министерство Внутренних Дел Выдуманной Страны",
         navigation: [
             {
                 name: "Меню",
@@ -148,7 +148,7 @@ let language = {
             },
             text: {
                 contactsText: "Свяжитесь с нами:",
-                footerText: "Контакты и нижний блок",
+                footerText: "Контакты",
             },
         }
     },
@@ -159,7 +159,7 @@ let language = {
                 phone: "phone: ",
                 email: "e-mail: ",
             },
-        mainHeader: "The Ministry Of Internal Affairs Of Imaginable Country",
+        name: "The Ministry Of Internal Affairs Of Imaginable Country",
         navigation: [
             {   
                 name: "Menu",
@@ -309,7 +309,7 @@ let language = {
                 phone: "murr.: ",
                 email: "mew-meaw: ",
             },
-        mainHeader: "Murr meaw meaw prrr miu maew mrew",
+        name: "Murr meaw meaw prrr miu maew mrew",
         navigation: [
             {
                 name: "Meaw",
